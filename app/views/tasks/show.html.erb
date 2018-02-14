@@ -1,0 +1,19 @@
+<%= button_to "Edit this task", edit_path(@tasks), :method => "get" %>
+
+<h1><%= @tasks.title %></h1>
+<p><%= @tasks.details %></p>
+
+<% if @tasks.completed.nil? %>
+<%  checkbox = "" %>
+<%  text = "This task is not completed yet"  %>
+<% else %>
+<%  checkbox = "checked" %>
+<%  text = "This task is completed" %>
+<% end %>
+
+<input type="checkbox" name="task" <%=checkbox%> >
+<%= text %>
+<br>
+
+<hr>
+<%= link_to "Back to list", root_path %>
